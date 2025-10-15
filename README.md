@@ -17,16 +17,27 @@ El sistema combina un frontend ligero con un backend en Django para **analizar l
 
 ## 🧩 Estructura del proyecto
 
-```
 shodanIA/
-├── index.html               # Interfaz principal
-├── static/                  # Recursos CSS/JS
-├── manage.py                # Gestor Django
-├── app/                     # Aplicaciones Django
-├── shodanIA/                # Configuración base (settings, urls, wsgi)
-├── requirements.txt         # Dependencias del proyecto
-└── .venv/                   # Entorno virtual (no se sube a GitHub)
-```
+├─ index.html                # Landing / UI estática
+├─ sign-in.css               # Estilos de login
+├─ images/                   # Imágenes (e.g., sign_in.png)
+├─ dashboard/                # UI de tablero
+│  ├─ index.html
+│  ├─ shodan.html
+│  ├─ shodanIp.html
+│  ├─ dashboard.js
+│  └─ *.css
+├─ api/                      # App Django (endpoints)
+│  ├─ views.py
+│  ├─ urls.py                # <-- ROOT_URLCONF apunta aquí
+│  └─ services.py
+├─ backend/                  # Proyecto Django
+│  ├─ settings.py            # Carga .env, CORS, DRF, JWT, SHODAN/OPENAI
+│  ├─ asgi.py / wsgi.py
+│  └─ api_endpoints.py
+├─ manage.py                 # Arranque Django
+├─ requirements.txt          # Dependencias
+└─ db.sqlite3                # BD de desarrollo (no subir a Git)
 
 ---
 
